@@ -3,14 +3,14 @@ const { Client } = require("discord.js")//Importing client
 const client = new Client()//creating a new discord.js client
 
 module.exports = {
-    name: "youtube",
-    description: "Starts a YouTube Together session",
+    name: "poker",
+    description: "Starts a Poker Night game session",
     usage: "",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
-    aliases: ["yt"],
+    aliases: ["pk"],
     /**
      *
      * @param {import("../structures/DiscordMusicBot")} client
@@ -19,14 +19,14 @@ module.exports = {
      * @param {*} param3
      */
     async execute(message, args){
-        let Invite = await message.member.voice.channel.activityInvite("755600276941176913")//Made using discordjs-activity package
+        let Invite = await message.member.voice.channel.activityInvite("755827207812677713")//Made using discordjs-activity package
         let embed = new MessageEmbed()
-        .setAuthor("YouTube Together", "https://cdn.discordapp.com/emojis/749289646097432667.png?v=1")
+        .setAuthor("Poker Night", "https://media.discordapp.net/attachments/803959840547405854/907967074402439198/unknown.png?v=1")
         .setColor("#FF0000")
         .setDescription(`
-Using **YouTube Together** you can watch YouTube with your friends in a Voice Channel. Click *Join YouTube Together* to join in!
+Using **Poker Night** you can play Poker Night with your friends in a Voice Channel. Click *Poker Night* to join in!
 
-__**[Join YouTube Together](https://discord.com/invite/${Invite.code})**__
+__**[Poker Night](https://discord.com/invite/${Invite.code})**__
 
 ⚠ **Note:** This only works in Desktop
 `)
