@@ -45,8 +45,6 @@ module.exports = {
     const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
     const spotifyPlaylistPattern = /^.*(https:\/\/open\.spotify\.com\/playlist)([^#\&\?]*).*/gi;
     const spotifyPlaylistValid = spotifyPlaylistPattern.test(args[0]);
-    const spotifyAlbumPattern = /^.*(https:\/\/open\.spotify\.com\/album)([^#\&\?]*).*/gi;
-    const spotifyAlbumValid = spotifyAlbumPattern.test(args[0]);
     const url = args[0];
     const urlValid = pattern.test(args[0]);
 
@@ -65,7 +63,7 @@ module.exports = {
     let videos = [];
     let waitMessage = null;
 
-    if (spotifyPlaylistValid || spotifyAlbumValid) {
+    if (spotifyPlaylistValid) {
       try {
         waitMessage = await message.channel.send('fetching playlist...')
         let playlistTrack = await getTracks(url);

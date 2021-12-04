@@ -48,9 +48,7 @@ module.exports = {
     const spotifyPattern = /^.*(https:\/\/open\.spotify\.com\/track)([^#\&\?]*).*/gi;
     const spotifyValid = spotifyPattern.test(args[0]);
     const spotifyPlaylistPattern = /^.*(https:\/\/open\.spotify\.com\/playlist)([^#\&\?]*).*/gi;
-    const spotifyPlaylistValid = spotifyPlaylistPattern.test(args[0]);
-    const spotifyAlbumPattern = /^.*(https:\/\/open\.spotify\.com\/album)([^#\&\?]*).*/gi;
-    const spotifyAlbumValid = spotifyAlbumPattern.test(args[0]);
+    const spotifyPlaylistValid = spotifyPlaylistPattern.test(args[0])
     const url = args[0];
     const urlValid = videoPattern.test(args[0]);
 
@@ -60,8 +58,6 @@ module.exports = {
     } else if (scdl.isValidUrl(url) && url.includes("/sets/")) {
       return message.client.commands.get("playlist").execute(message, args);
     } else if (spotifyPlaylistValid) {
-      return message.client.commands.get("playlist").execute(message, args);
-    } else if (spotifyAlbumValid) {
       return message.client.commands.get("playlist").execute(message, args);
     }
 
