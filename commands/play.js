@@ -62,7 +62,7 @@ module.exports = {
     } else if (spotifyPlaylistValid) {
       return message.client.commands.get("playlist").execute(message, args);
     } else if (spotifyAlbumValid) {
-      return message.client.commands.get("album").execute(message, args);
+      return message.client.commands.get("playlist").execute(message, args);
     }
 
     if (mobileScRegex.test(url)) {
