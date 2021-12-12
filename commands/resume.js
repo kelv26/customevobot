@@ -14,6 +14,7 @@ module.exports = {
 
     if (!queue.playing) {
       queue.playing = true;
+      queue.connection.dispatcher.pause();
       queue.connection.dispatcher.resume();
       return queue.textChannel
         .send(i18n.__mf("resume.resultNotPlaying", { author: message.author }))
