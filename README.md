@@ -1,4 +1,4 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kelv26/evobot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kelv26/customevobot)
 
 This is a custom [EvoBot](https://github.com/eritislami/evobot) from [@eritislami](https://github.com/eritislami) with Spotify support and Discord Activities. <br>
 Modified by [@kelv26](https://github.com/kelv26)
