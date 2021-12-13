@@ -17,7 +17,7 @@ If deploying to Heroku make sure to create config variables
 
 ```
 git clone https://github.com/kelv26/customevobot
-cd evobot
+cd customevobot
 npm install
 ```
 
@@ -45,6 +45,8 @@ Copy or Rename `config.json.example` to `config.json` and fill out the values:
   "STAY_TIME": 30
 }
 ```
+
+If you wish to deploy this to Heroku, add the config variables in the Settings of the application with all the variables as stated above.
 
 Currently available locales are:
 - English (en)
