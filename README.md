@@ -77,9 +77,9 @@ Currently available locales are:
 
 * 🎶 Play music, playlist or album from Spotify via url
 
-`/play https://open.spotify.com/track/4GYUFc9nA3CqfotomfA95m?si=ae1394139f2e41cf`
-`/play https://open.spotify.com/album/5EzDhyNZuO7kuaABHwbBKX?si=gpAopoThRgmJLwxy_FESgg`
-`/play https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn?si=cb1683e2470a42cf`
+`/play https://open.spotify.com/track/4GYUFc9nA3CqfotomfA95m?si=ae1394139f2e41cf`  
+`/play https://open.spotify.com/album/5EzDhyNZuO7kuaABHwbBKX?si=gpAopoThRgmJLwxy_FESgg`  
+`/play https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn?si=cb1683e2470a42cf`  
 
 * 🔎 Search and select music to play
 
