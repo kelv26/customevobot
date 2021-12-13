@@ -1,23 +1,22 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/eritislami/evobot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kelv26/evobot)
 
-![logo](https://repository-images.githubusercontent.com/186841818/8aa95700-7730-11e9-84be-e80f28520325)
-
-# 🤖 EvoBot (Discord Music Bot)
-> EvoBot is a Discord Music Bot built with discord.js & uses Command Handler from [discordjs.guide](https://discordjs.guide)
+This is a custom [EvoBot](https://github.com/eritislami/evobot) from [@eritislami](https://github.com/eritislami) with Spotify support and Discord Activities. <br>
+Modified by [@kelv26](https://github.com/kelv26)
 
 ## Requirements
 
 1. Discord Bot Token **[Guide](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)**
 2. YouTube Data API v3 Key **[Guide](https://developers.google.com/youtube/v3/getting-started)**  
 2.1 **(Optional)** Soundcloud Client ID **[Guide](https://github.com/zackradisic/node-soundcloud-downloader#client-id)**
-3. Node.js v14.0.0 or newer
+3. Node.js v14.0.0 or newer (Recommended Node.js v14.15.5)
+4. Spotify API key
 
 ## 🚀 Getting Started
 
 If deploying to Heroku make sure to create config variables
 
 ```
-git clone https://github.com/eritislami/evobot.git
+git clone https://github.com/kelv26/customevobot
 cd evobot
 npm install
 ```
@@ -71,6 +70,12 @@ Currently available locales are:
 
 `/play https://soundcloud.com/blackhorsebrigade/pearl-jam-alive`
 
+* 🎶 Play music, playlist or album from Spotify via url
+
+`/play https://open.spotify.com/track/4GYUFc9nA3CqfotomfA95m?si=ae1394139f2e41cf`
+`/play https://open.spotify.com/album/5EzDhyNZuO7kuaABHwbBKX?si=gpAopoThRgmJLwxy_FESgg`
+`/play https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn?si=cb1683e2470a42cf`
+
 * 🔎 Search and select music to play
 
 `/search Pearl Jam`
@@ -98,27 +103,18 @@ Examples: `1` or `1,2,3`
 * Skip to song # in queue (/skipto, /st)
 * Move a song in the queue (/move, /mv)
 * Remove song # from queue (/remove, /rm)
-* Play an mp3 clip (/clip song.mp3) (put the file in sounds folder)
-* List all clips (/clips)
 * Show api ping (/ping)
 * Show bot uptime (/uptime)
 * Toggle pruning of bot messages (/pruning)
 * Localization in 6 languages
 * Help (/help, /h)
+* Youtube Together (/youtube, /yt)
+* Poker Night (/poker, /pk)
+* Word Snacks (/wordsnacks, /ws)
+* Letter Tile (/lettertile, /lt)
 * Command Handler from [discordjs.guide](https://discordjs.guide/)
 * Media Controls via Reactions
 
-![reactions](https://i.imgur.com/9S7Omf9.png)
-
-## 🤝 Contributing
-
-1. [Fork the repository](https://github.com/eritislami/evobot/fork)
-2. Clone your fork: `git clone https://github.com/your-username/evobot.git`
-3. Create your feature branch: `git checkout -b my-new-feature`
-4. Commit your changes: `git commit -am 'Add some feature'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request
-
 ## 📝 Credits
 
-[@iCrawl](https://github.com/iCrawl) For the queue system used in this application which was adapted from [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot)
+[@eritislami](https://github.com/eritislami) For the core application from [@eritislami/evobot](https://github.com/eritislami/evobot)
