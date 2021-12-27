@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+const { Client } = require("discord.js")//Importing client
+const client = new Client()//creating a new discord.js client
 
 module.exports = {
     name: "lettertile",
