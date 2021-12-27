@@ -3,14 +3,14 @@ const { Client } = require("discord.js")//Importing client
 const client = new Client()//creating a new discord.js client
 
 module.exports = {
-    name: "lettertile",
-    description: "Starts a Letter Tile session",
+    name: "chesspark",
+    description: "Starts a Chess in the Park game session",
     usage: "",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
-    aliases: ["lt"],
+    aliases: ["chess"],
     /**
      *
      * @param {import("../structures/DiscordMusicBot")} client
@@ -19,14 +19,14 @@ module.exports = {
      * @param {*} param3
      */
     async execute(message, args){
-        let Invite = await message.member.voice.channel.activityInvite("879863686565621790")//Made using discordjs-activity package
+        let Invite = await message.member.voice.channel.activityInvite("832012774040141894")//Made using discordjs-activity package
         let embed = new MessageEmbed()
-        .setAuthor("Letter Tile", "https://media.discordapp.net/attachments/803959840547405854/907927062214488064/unknown.png?v=1")
+        .setAuthor("Chess in the Park", "https://media.discordapp.net/attachments/711904924639821885/907925486498373652/unknown.png?v=1")
         .setColor("#FF0000")
         .setDescription(`
-Using **Letter Tile** you can play Letter Tile with your friends in a Voice Channel. Click *Join Letter Tile* to join in!
+Using **Chess in the Park** you can play Chess in the Park with your friends in a Voice Channel. Click *Chess in the Park* to join in!
 
-__**[Join Letter Tile](https://discord.com/invite/${Invite.code})**__
+__**[Chess in the Park](https://discord.com/invite/${Invite.code})**__
 
 ⚠ **Note:** This only works in Desktop
 `)

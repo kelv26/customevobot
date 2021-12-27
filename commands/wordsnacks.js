@@ -21,7 +21,7 @@ module.exports = {
     async execute(message, args){
         let Invite = await message.member.voice.channel.activityInvite("879863976006127627")//Made using discordjs-activity package
         let embed = new MessageEmbed()
-        .setAuthor("YouTube Together", "https://cdn.discordapp.com/emojis/749289646097432667.png?v=1")
+        .setAuthor("Word Snacks", "https://media.discordapp.net/attachments/803959840547405854/907967010183450694/unknown.png?v=1")
         .setColor("#FF0000")
         .setDescription(`
 Using **Words Snacks** you can play Wrods Snacks with your friends in a Voice Channel. Click *Join Words Snacks* to join in!

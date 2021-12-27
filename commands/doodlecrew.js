@@ -3,14 +3,14 @@ const { Client } = require("discord.js")//Importing client
 const client = new Client()//creating a new discord.js client
 
 module.exports = {
-    name: "lettertile",
-    description: "Starts a Letter Tile session",
+    name: "doodlecrew",
+    description: "Starts a Doodle Crew game session",
     usage: "",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
-    aliases: ["lt"],
+    aliases: ["doodle"],
     /**
      *
      * @param {import("../structures/DiscordMusicBot")} client
@@ -19,14 +19,14 @@ module.exports = {
      * @param {*} param3
      */
     async execute(message, args){
-        let Invite = await message.member.voice.channel.activityInvite("879863686565621790")//Made using discordjs-activity package
+        let Invite = await message.member.voice.channel.activityInvite("755827207812677713")//Made using discordjs-activity package
         let embed = new MessageEmbed()
-        .setAuthor("Letter Tile", "https://media.discordapp.net/attachments/803959840547405854/907927062214488064/unknown.png?v=1")
+        .setAuthor("Doodle Crew", "https://media.discordapp.net/attachments/711904924639821885/907924116693196800/unknown.png?v=1")
         .setColor("#FF0000")
         .setDescription(`
-Using **Letter Tile** you can play Letter Tile with your friends in a Voice Channel. Click *Join Letter Tile* to join in!
+Using **Doodle Crew** you can play Doodle Crew with your friends in a Voice Channel. Click *Doodle Crew* to join in!
 
-__**[Join Letter Tile](https://discord.com/invite/${Invite.code})**__
+__**[Doodle Crew](https://discord.com/invite/${Invite.code})**__
 
 ⚠ **Note:** This only works in Desktop
 `)
