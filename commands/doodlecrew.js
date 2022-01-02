@@ -19,7 +19,7 @@ module.exports = {
      * @param {*} param3
      */
     async execute(message, args){
-        let Invite = await message.member.voice.channel.activityInvite("755827207812677713")//Made using discordjs-activity package
+        let Invite = await message.member.voice.channel.activityInvite("878067389634314250")//Made using discordjs-activity package
         let embed = new MessageEmbed()
         .setAuthor("Doodle Crew", "https://media.discordapp.net/attachments/711904924639821885/907924116693196800/unknown.png?v=1")
         .setColor("#FF0000")
