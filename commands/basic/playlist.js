@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { play } = require("../include/play");
+const { play } = require("../../include/play");
 const YouTubeAPI = require("simple-youtube-api");
 const ytsr = require('ytsr');
 const { getTracks } = require('spotify-url-info');
@@ -11,7 +11,7 @@ const {
   MAX_PLAYLIST_SIZE,
   DEFAULT_VOLUME,
   LOCALE
-} = require("../util/EvobotUtil");
+} = require("../../util/EvobotUtil");
 const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
 const i18n = require("i18n");
 

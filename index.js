@@ -10,7 +10,9 @@ const i18n = require("i18n");
 const { Structures, Invite } = require('discord.js');
 const fetch = require("node-fetch")
 const mongoDB = require('mongoose');
-const blacklistModel = require('./schemas/blacklist')
+const blacklistModel = require('./schemas/blacklist');
+const fs = require('fs');
+const { exists } = require("./schemas/blacklist");
 
 Structures.extend('VoiceChannel', VoiceChannel => {
   return class EpicVoiceChannel extends VoiceChannel {
@@ -117,11 +119,19 @@ client.on("error", console.error);
 /**
  * Import all commands
  */
-const commandFiles = readdirSync(join(__dirname, "commands")).filter((file) => file.endsWith(".js"));
-for (const file of commandFiles) {
-  const command = require(join(__dirname, "commands", `${file}`));
-  client.commands.set(command.name, command);
-}
+// First get the category directories
+const isDirectory = source => fs.lstatSync(source).isDirectory();
+const getDirectories = source => fs.readdirSync(source).map(name => path.join(source, name)).filter(isDirectory);
+
+// Then load the commands
+getDirectories(__dirname + '/commands').forEach(category => {
+  const commandFiles = fs.readdirSync(category).filter(file => file.endsWith('.js'));
+
+  for(const file of commandFiles) {
+    const command = require(`${category}/${file}`);
+    client.commands.set(command.name, command);
+  }
+});
 
 client.on("message", async (message) => {
   if (message.author.bot) return;
