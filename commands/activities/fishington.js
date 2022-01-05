@@ -21,7 +21,7 @@ module.exports = {
     async execute(message, args){
         let Invite = await message.member.voice.channel.activityInvite("814288819477020702")//Made using discordjs-activity package
         let embed = new MessageEmbed()
-        .setAuthor("Fishington", "https://media.discordapp.net/attachments/803959840547405854/928181633604005959/unknown.png?v=1")
+        .setAuthor("Fishington", "https://media.discordapp.net/attachments/711904924639821885/928213285608779786/unknown.png?v=1")
         .setColor("#FF0000")
         .setDescription(`
 Using **Fishington** you can play Fishington with your friends in a Voice Channel. Click *Fishington* to join in!
