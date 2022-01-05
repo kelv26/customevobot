@@ -13,44 +13,18 @@ module.exports = {
 
     let helpEmbed = new MessageEmbed()
       .setTitle(i18n.__mf("help.embedTitle", { botname: message.client.user.username }))
-      .setDescription("Here are a list of available commands of the bot, Enjoy!")
-      .setColor("#00b515");
-
-    commands.forEach((cmd,i) => {
-      if (i==0){
+      .setDescription("Don't know how to use the bot?\nYou've come to the right place!\nEnter one of the commands below to see what this bot can do!")
+      .setColor("#00b515")
+      .setThumbnail("https://media.discordapp.net/attachments/803959840547405854/928244163592474634/MusicbotLogo.png");
         helpEmbed.addField(
-          '\u200B','~~-----------------------------------------------------------------------------------------------~~',false
+          '\u200B','\u200B',false
         );
         helpEmbed.addField(
-          '<:rocket:420150420046660911> Discord Activities', 'Commands to start discord activities.', false
+          `<:rocket:420150420046660911> Discord Activities`, `**${message.client.prefix}help activities**\nView available commands to start Discord Activities with this bot!`, true
         );
         helpEmbed.addField(
-          `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
-          `${cmd.description}`,
-          true
+          `<:notepad_spiral:420150420046660911> Music Commands`,`**${message.client.prefix}help commands**\nView Basic Commands for the bot!`,true
         );
-      }
-      else if (i!=6){
-        helpEmbed.addField(
-          `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
-          `${cmd.description}`,
-          true
-        );
-      }
-      else{
-        helpEmbed.addField(
-          '\u200B','~~-----------------------------------------------------------------------------------------------~~',false
-        );
-        helpEmbed.addField(
-          '<:notepad_spiral:420150420046660911> Commands','Basic Commands for the bot.',false
-        );
-        helpEmbed.addField(
-          `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
-          `${cmd.description}`,
-          true
-        );
-      }
-    });
 
     helpEmbed.setTimestamp();
     helpEmbed.setFooter('Music is love, Music is life 🎧', 'https://cdn.discordapp.com/app-icons/877872539068690462/a79b3355cdad28648f0a0d9cd406dbe4.png');

@@ -111,7 +111,7 @@ i18n.configure({
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
+  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "PLAYING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
@@ -143,11 +143,29 @@ client.on("message", async (message) => {
   const [, matchedPrefix] = message.content.match(prefixRegex);
 
   const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-  const commandName = args.shift().toLowerCase();
+  const commandWithoutSpace = args.shift().toLowerCase();
+  const commandWithSpace = `${commandWithoutSpace} ${args[0]}`;
+  let command = null;
 
-  const command =
-    client.commands.get(commandName) ||
-    client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+  // check commands with the spaces
+  if (client.commands.has(commandWithSpace)) {
+    command =
+      client.commands.get(commandWithSpace);
+    args.shift();
+    console.log(command);
+  } 
+  // check commands without the spaces
+  else if (client.commands.has(commandWithoutSpace)) {
+    command =
+      client.commands.get(commandWithoutSpace);
+    console.log(command);
+  }
+  // check commands with aliases
+  else if (client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandWithoutSpace))){
+    command = 
+      client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandWithoutSpace));
+    console.log(command);
+  }
 
   if (!command) return;
 
